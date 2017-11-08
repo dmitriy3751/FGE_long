@@ -1,0 +1,14 @@
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\bin\Debug\FGE_Project.exe.config
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\bin\Debug\FGE_Project.exe
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\bin\Debug\FGE_Project.pdb
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\bin\Debug\FGE_Project.xml
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\MainWindow.baml
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\MainWindow.g.vb
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\Application.g.vb
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project_MarkupCompile.cache
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.g.resources
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.Resources.resources
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.vbproj.GenerateResource.Cache
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.exe
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.xml
+c:\users\max\documents\visual studio 2013\Projects\FGE_Project\FGE_Project\obj\Debug\FGE_Project.pdb
