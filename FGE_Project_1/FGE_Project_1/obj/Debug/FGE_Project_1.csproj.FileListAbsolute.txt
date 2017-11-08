@@ -24,16 +24,16 @@ D:\DDZ\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
 D:\DDZ\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
 D:\DDZ\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
 D:\DDZ\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.exe
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\MainWindow.baml
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\MainWindow.g.cs
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\App.g.cs
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.exe
-D:\DDZ\FGE_long\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.exe
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.exe
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\MainWindow.baml
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\MainWindow.g.cs
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\App.g.cs
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
+C:\Users\Max\Documents\Visual Studio 2013\Projects\FGE_long-master\FGE_long-master\FGE_Project_1\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache

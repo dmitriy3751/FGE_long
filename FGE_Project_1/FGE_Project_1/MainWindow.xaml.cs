@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
 
+using System.Diagnostics;
+using System.IO;
 namespace FGE_Project_1
 {
     /// <summary>
@@ -28,11 +30,6 @@ namespace FGE_Project_1
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MenuItem menuItem = (MenuItem)sender;
-            MessageBox.Show(menuItem.Header.ToString());
-        }
 
         //обработчик SizeSlider_ValueChanged, который будет срабатывать при возникновении события ValueChanged - изменении значения слайдера и изменять толщину кисти в соответсвтии с ним
        private void SizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -45,6 +42,21 @@ namespace FGE_Project_1
             drawingAttributes.Width = BrushSlider.Value; //ширина кисти
             drawingAttributes.Height = BrushSlider.Value; //высота кисти
         }
+
+
+        //Добавлена возможность сохранения изображения в формате BMP 
+        //Изображение сохраняется с именем "result.bmp" в исходной папке проекта
+        //( нужно разрешить выбрать путь сохранения + исправить баг сохранения тулбара!!!)
+       private void Button_Click(object sender, RoutedEventArgs e)
+       {
+           var bmp = new RenderTargetBitmap(
+               (int)cs.ActualWidth, (int)cs.ActualHeight, 96, 96, PixelFormats.Default);
+           bmp.Render(cs);
+           var enc = new PngBitmapEncoder();
+           enc.Frames.Add(BitmapFrame.Create(bmp));
+           using (var s = File.Create("result.bmp"))
+               enc.Save(s);
+       }
     }
 
 }
