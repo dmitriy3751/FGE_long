@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid  Margin="0,0,2,8">
-        
-        
-        <InkCanvas Background="White" Margin="10,0,-10,0" RenderTransformOrigin="0.425,0.589" />
+
+
+        <InkCanvas Name="Canvas" Background="White" Margin="0,41,10,0" RenderTransformOrigin="0.425,0.589" />
         <Menu Height="41" VerticalAlignment="Top">
             <MenuItem Header="File" Click="MenuItem_Click">
 
@@ -15,9 +15,8 @@
 
         <TextBlock Text="Brush size" Margin="171,1,275,283" RenderTransformOrigin="2.033,2.211"/>
         <Slider Name="BrushSlider" Minimum="1" Maximum="100" ValueChanged="SizeSlider_ValueChanged" RenderTransformOrigin="0.474,1.308" Margin="245,1,154,283"/>
-        <Border BorderThickness="2" Margin="0,0,0,-10" >
-            <InkCanvas Name="Canvas" Margin="0,43,0,-8"/>
-        </Border>
+
+       
     </Grid>
 
 </Window>
