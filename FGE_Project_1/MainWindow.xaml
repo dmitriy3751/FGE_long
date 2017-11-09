@@ -1,0 +1,55 @@
+﻿<Window x:Class="FGE_Project_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="1080" Width="1920">
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button  Grid.Column="0" Grid.Row="0" Content="Save" Click="Button_Click" HorizontalAlignment="Stretch" Grid.ColumnSpan="4"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Brush Color:" TextAlignment="Center"/>
+            <ComboBox Grid.Column="1" Grid.Row="1" Name="BrushColorCombo" SelectionChanged="BrushColorCombo_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="Brush Shapes:" TextAlignment="Center"/>
+            <ComboBox Grid.Column="3" Grid.Row="1" Name="BrushShapesCombo" SelectedIndex="0" SelectionChanged="BrushShapesCombo_SelectionChanged">
+                <ComboBoxItem>
+                    <TextBlock Text="Line"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Straight line"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Circle"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Rectangle"/>
+                </ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Brush size" RenderTransformOrigin="2.033,2.211" TextAlignment="Center"/>
+            <Slider Grid.Column="2" Grid.Row="2" x:Name="BrushSlider" Minimum="1" Maximum="100" ValueChanged="SizeSlider_ValueChanged" RenderTransformOrigin="0.474,1.308"/>
+        </Grid>
+
+        <Grid Name="cs"  Height="1080" Width="1920" Margin="0,0,0.4,0" >
+
+            <InkCanvas x:Name="Canvas" Margin="0,0,2.4,9.6" />
+        </Grid>
+    </StackPanel>
+
+</Window>
