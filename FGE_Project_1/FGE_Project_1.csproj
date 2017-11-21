@@ -53,6 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UndoRedo\InkCanvasMementoDesigner.cs" />
+    <Compile Include="UndoRedo\Model\IMemento.cs" />
+    <Compile Include="UndoRedo\Model\IMementoCaretaker.cs" />
+    <Compile Include="UndoRedo\Model\IMementoDesigner.cs" />
+    <Compile Include="UndoRedo\StrokesMemento.cs" />
+    <Compile Include="UndoRedo\UndoRedoCaretaker.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

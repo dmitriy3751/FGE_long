@@ -18,6 +18,9 @@ using System.Reflection;
 
 using System.Diagnostics;
 using System.IO;
+using FGE_Project_1.UndoRedo.Model;
+using FGE_Project_1.UndoRedo;
+
 namespace FGE_Project_1
 {
     /// <summary>
@@ -25,7 +28,9 @@ namespace FGE_Project_1
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        private readonly IMementoCaretaker _undoRedoCaretaker;
+        //Функционал Undo ( реализован ) и Redo ( в доработке ) реализован на основе 
+        //шаблона IMemento.
 
         public MainWindow()
         {
@@ -39,6 +44,31 @@ namespace FGE_Project_1
                     BrushColorCombo.SelectedIndex = i;
                     break;
                 }
+            }
+
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Undo, OnExecutedCommands));
+            Canvas.MouseUp += new MouseButtonEventHandler(Canvas_MouseUp);
+
+            var mementoDesigner = new InkCanvasMementoDesigner(Canvas);
+            _undoRedoCaretaker = new UndoRedoCaretaker(mementoDesigner);
+            _undoRedoCaretaker.Initialize();
+        }
+
+        //Заполнение
+        void Canvas_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                _undoRedoCaretaker.StoreState();
+            }
+        }
+
+        //Обработчик Undo
+        private void OnExecutedCommands(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (e.Command == ApplicationCommands.Undo)
+            {
+                _undoRedoCaretaker.Undo();
             }
         }
 
@@ -67,14 +97,31 @@ namespace FGE_Project_1
         //( нужно разрешить выбрать путь сохранения + исправить баг сохранения тулбара!!!)
        private void Button_Click(object sender, RoutedEventArgs e)
        {
+           Microsoft.Win32.SaveFileDialog saveimg = new Microsoft.Win32.SaveFileDialog();
+           Canvas can = new Canvas();
+           saveimg.DefaultExt = ".BMP";
+           saveimg.Filter = "Image (.BMP)|*.BMP";
+           saveimg.ShowDialog();
+
            var bmp = new RenderTargetBitmap(
-               (int)cs.ActualWidth, (int)cs.ActualHeight, 96, 96, PixelFormats.Default);
+              (int)cs.ActualWidth, (int)cs.ActualHeight, 96, 96, PixelFormats.Default);
            bmp.Render(cs);
            var enc = new PngBitmapEncoder();
            enc.Frames.Add(BitmapFrame.Create(bmp));
-           using (var s = File.Create("result.bmp"))
-               enc.Save(s);
+           using (FileStream file = File.Create(saveimg.FileName))
+               enc.Save(file);
        }
+
+       
+       private void Button_Click_Open(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
+            f.Filter = "BMP(*.BMP)|*.BMP";
+            if (f.ShowDialog() == true)
+            {
+                imgPhoto.Source = new BitmapImage(new Uri(f.FileName));
+            }
+        }
 
        private void BrushShapesCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
@@ -90,6 +137,7 @@ namespace FGE_Project_1
                    break;
            }
        }
+
     }
 
 }
