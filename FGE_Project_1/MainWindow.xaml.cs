@@ -92,9 +92,7 @@ namespace FGE_Project_1
         }
 
 
-        //Добавлена возможность сохранения изображения в формате BMP 
-        //Изображение сохраняется с именем "result.bmp" в исходной папке проекта
-        //( нужно разрешить выбрать путь сохранения + исправить баг сохранения тулбара!!!)
+       //Сохранение изображения в формате BMP с выбором пути сохранения.
        private void Button_Click(object sender, RoutedEventArgs e)
        {
            Microsoft.Win32.SaveFileDialog saveimg = new Microsoft.Win32.SaveFileDialog();
@@ -112,7 +110,7 @@ namespace FGE_Project_1
                enc.Save(file);
        }
 
-       
+       //Загрузка изображения в формате BMP.
        private void Button_Click_Open(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
