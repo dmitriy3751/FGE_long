@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="1080" Width="1920">
     <StackPanel>
-        <Grid>
+        <Grid Height="56">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -17,8 +17,8 @@
             </Grid.ColumnDefinitions>
             <Button  Grid.Column="0" Grid.Row="0" Content="Open" Height="30" Width="90" Click="Button_Click_Open" HorizontalAlignment="Left" Margin="90,0,0,0"/>
             <Button  Grid.Column="0" Grid.Row="0" Content="Save" Height="30" Width="90" Click="Button_Click" HorizontalAlignment="Left" Grid.ColumnSpan="4"/>
-            <TextBlock Grid.Column="0" Grid.Row="1" Text="Brush Color:" TextAlignment="Center"/>
-            <ComboBox Grid.Column="1" Grid.Row="1" Name="BrushColorCombo" SelectionChanged="BrushColorCombo_SelectionChanged">
+            <TextBlock Grid.Column="0" Text="Brush Color:" TextAlignment="Center" Grid.ColumnSpan="2" Margin="185,0,362,20" Grid.RowSpan="2"/>
+            <ComboBox Grid.Column="1" Name="BrushColorCombo" SelectionChanged="BrushColorCombo_SelectionChanged" Grid.ColumnSpan="2" Margin="116,3,402,0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -28,8 +28,8 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Column="2" Grid.Row="1" Text="Brush Shapes:" TextAlignment="Center"/>
-            <ComboBox Grid.Column="3" Grid.Row="1" Name="BrushShapesCombo" SelectedIndex="0" SelectionChanged="BrushShapesCombo_SelectionChanged">
+            <TextBlock Grid.Column="2" Text="Brush Shapes:" TextAlignment="Center" Grid.ColumnSpan="2" Margin="81,0,460,0"/>
+            <ComboBox Grid.Column="3" Name="BrushShapesCombo" SelectedIndex="0" SelectionChanged="BrushShapesCombo_SelectionChanged">
                 <ComboBoxItem>
                     <TextBlock Text="Line"/>
                 </ComboBoxItem>
@@ -43,13 +43,36 @@
                     <TextBlock Text="Rectangle"/>
                 </ComboBoxItem>
             </ComboBox>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="Brush size" RenderTransformOrigin="2.033,2.211" TextAlignment="Center"/>
-            <Slider Grid.Column="2" Grid.Row="2" x:Name="BrushSlider" Minimum="1" Maximum="100" ValueChanged="SizeSlider_ValueChanged" RenderTransformOrigin="0.474,1.308"/>
+
+
+
+            <TextBlock Text="Brush size" Background="Gray" RenderTransformOrigin="2.033,2.211" TextAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,367,0" Grid.Row="1"/>
+            <Slider Grid.Column="1" Grid.Row="1" x:Name="BrushSlider" Minimum="1" Maximum="100" ValueChanged="SizeSlider_ValueChanged" RenderTransformOrigin="0.474,1.308" Grid.ColumnSpan="2" Margin="116,5,402,0"/>
+
+            <TextBlock Background="Gray" Text="Brushes:" RenderTransformOrigin="0.506,4.159" Grid.Column="2" Margin="76,2,0,0" Grid.Row="1" TextAlignment="Center"/>
+            <ComboBox Name="Brushes" SelectedIndex="0" SelectionChanged="Brushes_Select" RenderTransformOrigin="2.487,2.455" Grid.Column="3" Grid.Row="1">
+                <ComboBoxItem>
+                    <TextBlock Text="Ink"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Erase"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Erase Stroke"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Select"/>
+                </ComboBoxItem>
+            </ComboBox>
         </Grid>
 
-        <Grid Name="cs"  Height="1080" Width="1920" Margin="0,0,0.4,0" >
+        <Grid Name="cs"  Height="1089" Width="1920" Margin="0,0,-8,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="209*"/>
+            </Grid.ColumnDefinitions>
 
-            <InkCanvas x:Name="Canvas" Margin="0,0,2.4,9.6">
+            <InkCanvas x:Name="Canvas" Margin="0,0,2,10" Grid.ColumnSpan="2">
                 <Image Margin="12,12,16,71" Name="imgPhoto" Stretch="Fill" Grid.Column="1" />
             </InkCanvas>
         </Grid>

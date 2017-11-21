@@ -80,15 +80,43 @@ namespace FGE_Project_1
 
 
         //обработчик SizeSlider_ValueChanged, который будет срабатывать при возникновении события ValueChanged - изменении значения слайдера и изменять толщину кисти в соответсвтии с ним
-       private void SizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void SizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-           // проверка, было бы создано поле для рисования
-           if (Canvas == null) 
-               return;
-           
+            // проверка, было бы создано поле для рисования
+            if (Canvas == null)
+                return;
+
             var drawingAttributes = Canvas.DefaultDrawingAttributes; //определяет внешний вид пера (выбираются стандартные настройки)
             drawingAttributes.Width = BrushSlider.Value; //ширина кисти
             drawingAttributes.Height = BrushSlider.Value; //высота кисти
+            Canvas.EraserShape = new RectangleStylusShape(BrushSlider.Value, BrushSlider.Value); // для ластика задаем отдельно его высоту\ширину, т.к. иначе при выборе его размера он не меняется EraserShape
+
+            //При изменении EraserShape, курсор на InkCanvas не обновляется до следующего EditingMode изменения(информация с МСДН). поэтому необходимо обновить editingmode
+            var previousEditingMode = Canvas.EditingMode;
+            Canvas.EditingMode = InkCanvasEditingMode.None;
+            Canvas.EditingMode = previousEditingMode;
+        }
+
+        private void Brushes_Select(object sender, SelectionChangedEventArgs e)
+        {
+            if (Canvas == null) return;
+
+            //Выбор способа рисовки\удаления\изменения
+            switch (Brushes.SelectedIndex)
+            {
+                case 0:
+                    Canvas.EditingMode = InkCanvasEditingMode.Ink;
+                    break;
+                case 1:
+                    Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
+                    break;
+                case 2:
+                    Canvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
+                    break;
+                case 3:
+                    Canvas.EditingMode = InkCanvasEditingMode.Select;
+                    break;
+            }
         }
 
 
