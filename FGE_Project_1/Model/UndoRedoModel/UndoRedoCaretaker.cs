@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FGE_Project_1.UndoRedo.Model;
+using FGE_Project_1.UndoRedo.ViewModel;
 
 namespace FGE_Project_1.UndoRedo
 {
@@ -19,7 +19,7 @@ namespace FGE_Project_1.UndoRedo
 
         public void Initialize()
         {
-            _undoStates.Clear();
+            _undoStates.Clear();    
             StoreState();
         }
 
@@ -28,14 +28,15 @@ namespace FGE_Project_1.UndoRedo
             var memento = _designer.CreateMemento();
             _undoStates.Push(memento);
         }
-
+           
+        // Реализация Undo. 
         public void Undo()
         {
-            if (_undoStates.Count > 1)
+            if (_undoStates.Count > 1)  // Если кол-во состояний не ноль 
             {
-                _undoStates.Pop();
-                var lastState = _undoStates.Peek();
-                _designer.SetMemento(lastState);
+                _undoStates.Pop();  // Вытаскиваем это состояние со стэка
+                var lastState = _undoStates.Peek(); // Получаем предпоследнее состояние
+                _designer.SetMemento(lastState); // Переключаемся на предпоследнее состояние lastState
             }
         }
     }

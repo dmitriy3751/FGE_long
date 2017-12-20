@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,8 +17,10 @@ using System.Reflection;
 
 using System.Diagnostics;
 using System.IO;
-using FGE_Project_1.UndoRedo.Model;
+using FGE_Project_1.UndoRedo.ViewModel;
 using FGE_Project_1.UndoRedo;
+using FGE_Project_1.Model;
+using FGE_Project_1.ViewModel;
 
 namespace FGE_Project_1
 {
@@ -29,140 +30,121 @@ namespace FGE_Project_1
     public partial class MainWindow : Window
     {
         private readonly IMementoCaretaker _undoRedoCaretaker;
-        //Функционал Undo ( реализован ) и Redo ( в доработке ) реализован на основе 
-        //шаблона IMemento.
+        Controller control;
 
         public MainWindow()
         {
             InitializeComponent();
-            BrushColorCombo.ItemsSource = typeof(Colors).GetProperties();
-            PropertyInfo[] colors = BrushColorCombo.ItemsSource.Cast<PropertyInfo>().ToArray();
-            for (int i = 0; i < colors.Length; i++)
-            {
-                if (colors[i].Name == "Black")
-                {
-                    BrushColorCombo.SelectedIndex = i;
-                    break;
-                }
-            }
+
 
             CommandBindings.Add(new CommandBinding(ApplicationCommands.Undo, OnExecutedCommands));
-            Canvas.MouseUp += new MouseButtonEventHandler(Canvas_MouseUp);
+            MyCanvas.MouseLeftButtonUp += new MouseButtonEventHandler(MyCanvas_MouseLeftButtonUp);
+            MyCanvas.MouseMove += new MouseEventHandler(MyCanvas_MouseMove);
+            MyCanvas.MouseLeftButtonDown += new MouseButtonEventHandler(MyCanvas_MouseLeftButtonDown);
 
-            var mementoDesigner = new InkCanvasMementoDesigner(Canvas);
+            var mementoDesigner = new InkCanvasMementoDesigner(MyCanvas);
             _undoRedoCaretaker = new UndoRedoCaretaker(mementoDesigner);
             _undoRedoCaretaker.Initialize();
+
+            control = new Controller(MyCanvas);
         }
 
-        //Заполнение
-        void Canvas_MouseUp(object sender, MouseButtonEventArgs e)
+        //обработчик движения мыши
+        private void MyCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            //if (MyCanvas == null) return;
+            control.M_Move(e.GetPosition(MyCanvas), BrushSlider.Value, Brushes.SelectedIndex, e.GetPosition(MyCanvas).X, e.GetPosition(MyCanvas).Y);
+        }
+
+
+
+        //обработчик отжатия левой кнопки мыши
+        private void MyCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
                 _undoRedoCaretaker.StoreState();
             }
+
+            //if (MyCanvas == null) return;
+            control.MLeftUp(e.GetPosition(MyCanvas).X, e.GetPosition(MyCanvas).Y, Brushes.SelectedIndex, BrushSlider.Value);
         }
 
-        //Обработчик Undo
-        private void OnExecutedCommands(object sender, ExecutedRoutedEventArgs e)
+        //обработчик нажатия левой кнопки мыши
+        private void MyCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.Command == ApplicationCommands.Undo)
-            {
-                _undoRedoCaretaker.Undo();
-            }
+            //if (MyCanvas == null) return;
+            control.MLeftDown(e.GetPosition(MyCanvas), BrushSlider.Value);
         }
 
-        private void BrushColorCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        //выбор цвета границ фигур
+        private void BorderColor_SelectionChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
-            Color selectedColor = (Color)(BrushColorCombo.SelectedItem as PropertyInfo).GetValue(null, null);
-            Canvas.DefaultDrawingAttributes.Color = selectedColor;
+            if (MyCanvas == null) return;
+            //Color borderColor = (Color)(BorderColorCombo.SelectedItem as PropertyInfo).GetValue(null, null);
+            //// ReSharper disable once PossibleNullReferenceException
+            control.border_color(BorderColorCombo.SelectedColor.Value);
         }
 
-
-        //обработчик SizeSlider_ValueChanged, который будет срабатывать при возникновении события ValueChanged - изменении значения слайдера и изменять толщину кисти в соответсвтии с ним
-        private void SizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        //выбор цвета заливки фигур (прямоугольник, эллипс)
+        private void FillColor_SelectionChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
-            // проверка, было бы создано поле для рисования
-            if (Canvas == null)
-                return;
-
-            var drawingAttributes = Canvas.DefaultDrawingAttributes; //определяет внешний вид пера (выбираются стандартные настройки)
-            drawingAttributes.Width = BrushSlider.Value; //ширина кисти
-            drawingAttributes.Height = BrushSlider.Value; //высота кисти
-            Canvas.EraserShape = new RectangleStylusShape(BrushSlider.Value, BrushSlider.Value); // для ластика задаем отдельно его высоту\ширину, т.к. иначе при выборе его размера он не меняется EraserShape
-
-            //При изменении EraserShape, курсор на InkCanvas не обновляется до следующего EditingMode изменения(информация с МСДН). поэтому необходимо обновить editingmode
-            var previousEditingMode = Canvas.EditingMode;
-            Canvas.EditingMode = InkCanvasEditingMode.None;
-            Canvas.EditingMode = previousEditingMode;
+            if (MyCanvas == null) return;
+            control.fill_color(FillColorCombo.SelectedColor.Value);
         }
 
+
+        //обработчик MenuItem_Click, который будет срабатывать при возникновении события ValueChanged - изменении значения слайдера и изменять толщину кисти в соответсвтии с ним
+
+        private void SizeSlider_ValueChanged(object sender, RoutedEventArgs e)
+        {
+            if (MyCanvas == null) return;
+            control.ChangeWidth(BrushSlider.Value); 
+        }
+        
+        // изменение кисти
         private void Brushes_Select(object sender, SelectionChangedEventArgs e)
         {
-            if (Canvas == null) return;
+            if (MyCanvas == null) return;
+            control.ChangeBrush(Brushes.SelectedIndex);
+         
+        }
 
-            //Выбор способа рисовки\удаления\изменения
-            switch (Brushes.SelectedIndex)
-            {
-                case 0:
-                    Canvas.EditingMode = InkCanvasEditingMode.Ink;
-                    break;
-                case 1:
-                    Canvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
-                    break;
-                case 2:
-                    Canvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
-                    break;
-                case 3:
-                    Canvas.EditingMode = InkCanvasEditingMode.Select;
-                    break;
-            }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            control.ClearAll();
         }
 
 
-       //Сохранение изображения в формате BMP с выбором пути сохранения.
-       private void Button_Click(object sender, RoutedEventArgs e)
-       {
-           Microsoft.Win32.SaveFileDialog saveimg = new Microsoft.Win32.SaveFileDialog();
-           Canvas can = new Canvas();
-           saveimg.DefaultExt = ".BMP";
-           saveimg.Filter = "Image (.BMP)|*.BMP";
-           saveimg.ShowDialog();
 
-           var bmp = new RenderTargetBitmap(
-              (int)cs.ActualWidth, (int)cs.ActualHeight, 96, 96, PixelFormats.Default);
-           bmp.Render(cs);
-           var enc = new PngBitmapEncoder();
-           enc.Frames.Add(BitmapFrame.Create(bmp));
-           using (FileStream file = File.Create(saveimg.FileName))
-               enc.Save(file);
+        private void BrushShapesCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MyCanvas == null) return;
+            control.brush_select(BrushShapesCombo.SelectedIndex);
+        }
+
+       //Сохранение изображения в формате BMP
+       private void Button_Click_Save(object sender, RoutedEventArgs e)
+       {
+           control.SaveFile();
        }
 
        //Загрузка изображения в формате BMP.
        private void Button_Click_Open(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog f = new Microsoft.Win32.OpenFileDialog();
-            f.Filter = "BMP(*.BMP)|*.BMP";
-            if (f.ShowDialog() == true)
-            {
-                imgPhoto.Source = new BitmapImage(new Uri(f.FileName));
-            }
-        }
-
-       private void BrushShapesCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
        {
-           if (Canvas == null) return;
+           control.OpenFile();
+       }
 
-           switch (BrushShapesCombo.SelectedIndex)
+       //Обработчик Undo
+       private void OnExecutedCommands(object sender, ExecutedRoutedEventArgs e)
+       {
+           if (e.Command == ApplicationCommands.Undo)
            {
-               case 0:
-                   //Canvas.DefaultDrawingAttributes.StylusTip = StylusTip.Ellipse;
-                   break;
-               case 1:
-                   //Canvas.DefaultDrawingAttributes.StylusTip = StylusTip.Rectangle;
-                   break;
+               _undoRedoCaretaker.Undo();
            }
        }
+
 
     }
 

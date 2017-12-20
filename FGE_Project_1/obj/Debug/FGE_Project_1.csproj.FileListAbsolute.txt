@@ -37,3 +37,71 @@ D:\ддз\FGE_long-master\FGE_long\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupC
 D:\ддз\FGE_long-master\FGE_long\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
 D:\ддз\FGE_long-master\FGE_long\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
 D:\ддз\FGE_long-master\FGE_long\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.exe
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.baml
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.g.cs
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\App.g.cs
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
+C:\Users\Дмитрий\Desktop\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.lref
+D:\DDZ\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.exe
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
+D:\DDZ\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe
+D:\DDZ\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.g.cs
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\App.g.cs
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.lref
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.baml
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
+D:\DDZ\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.exe
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.exe
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.g.cs
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\App.g.cs
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.lref
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\MainWindow.baml
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
+C:\Users\Alex\Documents\1\FGE_long-master (3)\FGE_long-master\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\FGE_Project_1.exe.config
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.exe
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.pdb
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\FGE_Project_1.exe
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\FGE_Project_1.pdb
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.csprojResolveAssemblyReference.cache
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\MainWindow.g.cs
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\App.g.cs
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.cache
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1_MarkupCompile.lref
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\MainWindow.baml
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.g.resources
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.Properties.Resources.resources
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1.csproj.GenerateResource.Cache
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\nunit.engine.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\nunit.engine.api.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\Mono.Cecil.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\obj\Debug\FGE_Project_1_Content.g.cs
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\Castle.Core.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\NSubstitute.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\lilol\Desktop\кек\НЬЮ\FGE_Project_1\bin\Debug\System.Threading.Tasks.Extensions.xml
